@@ -11,7 +11,7 @@ import logging
 import torch.backends.cudnn as cudnn
 from options import opt
 from utils import print_network
-from models.SANet import SANet
+from models.TCINet import TCINet
 from utils import hybrid_e_loss
 from torch.optim.lr_scheduler import MultiStepLR
 import pytorch_ssim
@@ -32,10 +32,10 @@ cudnn.benchmark = True
 
 #build the model
 
-model = SANet()
+model = TCINet()
 model.load_pre('./swin_base_patch4_window12_384_22k.pth')
 
-print_network(model, 'SANet')
+print_network(model, 'TCINet')
 # if(opt.load is not None):
 #     model.load_state_dict(torch.load(opt.load))
 #     print('load model from ', opt.load)

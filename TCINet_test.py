@@ -5,7 +5,7 @@ import torch.nn as nn
 import numpy as np
 import os, argparse
 import cv2
-from models.SANet import SANet
+from models.TCINet import TCINet
 from data import Test_dataset, Test_dataset2
 import torch.utils.data as data
 
@@ -19,7 +19,7 @@ dataset_path = opt.test_path
 
 
 # load the model
-model = nn.DataParallel(SANet())
+model = nn.DataParallel(TCINet())
 image_root = dataset_path + '/RGB/'
 gt_root = dataset_path +'/GT/'
 depth_root=dataset_path +'/T/'
