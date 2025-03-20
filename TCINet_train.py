@@ -43,7 +43,7 @@ model= nn.DataParallel(model).cuda()
 
 params1, params2=[],[]
 for name, param in model.named_parameters():
-    if check_keywords_in_name(name, ('rgb_swin')):
+    if check_keywords_in_name(name, ('rgb_swin',)):
         params1.append(param)
     else:
         params2.append(param)
